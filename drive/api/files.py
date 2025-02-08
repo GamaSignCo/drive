@@ -1102,8 +1102,8 @@ def remove_or_restore(entity_names, move=False):
 
     for entity in entity_names:
         doc = frappe.get_doc("Drive Entity", entity)
-        if doc.owner != frappe.session.user:
-            raise frappe.PermissionError("You do not have permission to remove this file")
+#        if doc.owner != frappe.session.user:
+#            raise frappe.PermissionError("You do not have permission to remove this file")
         if doc.is_active:
             entity_ancestors = get_ancestors_of(entity)
             if entity_ancestors:
